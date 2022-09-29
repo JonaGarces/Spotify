@@ -82,7 +82,7 @@ const Botones = () => {
         music.length > 0 &&
         music.map((music, index) => {
           return (
-            <li className="list-group-item bg-secondary text-white border-dark" type='button' key={index} onClick={
+            <li className="list-group-item bg-black text-white border-white" type='button' key={index} onClick={
               () => { setMusicNow(music.url), setTrackIndex(index), audioRef.current.play(), setIsPlaying(!isPlaying), setName(music.name.toUpperCase()) }} >
               <b>{music.id}</b> {music.name.toUpperCase()}
             </li>
@@ -93,17 +93,17 @@ const Botones = () => {
 
       <audio ref={audioRef} />
       
-      <div className="fs-3 d-flex justify-content-center bg-secondary text-white mt-2 ">
+      <div className="fs-3 d-flex justify-content-center text-white mt-2 ">
         {name}
       </div>
 
       <div className="btn-group mt-3 mb-2 d-flex justify-content-center " role="group" aria-label="Basic example">
-        <button type="button" className='form-control border border-0 py-3 px-5 bg-secondary text-white' onClick={() => { 
+        <button type="button" className='button_top form-control border border-0 py-3 px-5 ' onClick={() => { 
           prevSong(trackIndex, music), audioRef.current.play() }} >
             <i className="fa-solid fa-backward " />
           </button>
 
-        <button type="button" className=' form-control border border-0 py-3 mx-2 bg-secondary text-white ' onClick={() => {
+        <button type="button" className='button_top form-control border border-0 py-3 mx-2 ' onClick={() => {
 
           isPlaying ? (audioRef.current.pause(), setIsPlaying(!isPlaying)) : (audioRef.current.play(), setIsPlaying(!isPlaying));
 
@@ -112,7 +112,7 @@ const Botones = () => {
           <i className={"fa-solid " + (isPlaying ? 'fa-pause' : 'fa-play')} />
           </button>
 
-        <button type="button" className='form-control border border-0 py-3 px-5 bg-secondary text-white' onClick={
+        <button type="button" className='button_top form-control border border-0 py-3 px-5' onClick={
           () => { NextSong(trackIndex, music), audioRef.current.play()}}>
 
           <i className="fa-solid fa-forward" />

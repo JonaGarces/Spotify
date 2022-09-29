@@ -9,7 +9,9 @@ const Home = () => {
 
 	return (
 		<>
-			<Titulo className={'text-white text-center m-5'} name={'Spotify pirata'} />
+			
+			<Titulo className={'text-white text-center m-5'} name={'Spotify'} 
+			/>
 			<div className='container'>
 				<div className="row d-flex justify-content-center">
 					<div className="col-md-8 ">
